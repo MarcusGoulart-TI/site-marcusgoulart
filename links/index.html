@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Links — Marcus Goulart Tech Studio</title>
+<meta name="description" content="Orçamento, portfólio e contatos de Marcus Goulart — Tech Studio.">
+<link rel="canonical" href="https://marcusgoulart.pages.dev/links/">
+<meta name="theme-color" content="#08201A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marcus Goulart — Tech Studio">
+<meta property="og:description" content="Orçamento, portfólio e contatos.">
+<meta property="og:image" content="https://marcusgoulart.pages.dev/og-image.png">
+<meta property="og:url" content="https://marcusgoulart.pages.dev/links/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ground:#08201A;--surface:#0F2C23;--brand:#0E3B2C;--lime:#B6F23A;--ink:#EEF6E6;--muted:#9DB5A8;--linha:rgba(238,246,230,.12)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ground);color:var(--ink);font-family:"Space Grotesk",system-ui,sans-serif;min-height:100vh}
+  .wrap{max-width:560px;margin:0 auto;padding:48px 20px 40px}
+  .topo{text-align:center;margin-bottom:32px}
+  .ico{width:88px;height:88px;background:var(--brand);display:grid;place-items:center;margin:0 auto 20px}
+  .nome{font-family:Manrope,sans-serif;font-weight:700;letter-spacing:.08em;font-size:18px}
+  .desc{font-family:Manrope,sans-serif;font-weight:500;letter-spacing:.35em;font-size:10px;color:var(--muted);margin-top:4px}
+  .bio{color:var(--muted);margin-top:16px;font-size:16px;line-height:1.5}
+  .cards{display:grid;gap:12px}
+  .card{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--linha);padding:20px;transition:border-color .15s}
+  .card:hover,.card:focus-visible{border-color:var(--ink);outline:none}
+  .card .n{font-size:12px;letter-spacing:.15em;color:var(--muted);width:28px}
+  .card b{display:block;font-size:18px}
+  .card small{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+  .card .seta{color:var(--muted);font-size:20px}
+  .card.principal{background:var(--lime);color:#0B1F17;border-color:var(--lime)}
+  .card.principal .n,.card.principal small,.card.principal .seta{color:#1F3D2E}
+  .card.principal:hover{border-color:var(--lime);background:#c6f75f}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:32px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topo">
+      <div class="ico"><svg width="52" height="46" viewBox="0 0 180 160" aria-hidden="true"><polygon fill="#EEF6E6" points="0,160 0,0 46,0 90,62 134,0 180,0 180,160 140,160 140,68 90,128 40,68 40,160"/><rect fill="#B6F23A" x="79" y="138" width="22" height="22"/></svg></div>
+      <div class="nome">MARCUS GOULART</div>
+      <div class="desc">TECH STUDIO</div>
+      <p class="bio">Sites, sistemas sob medida e mapas.<br>Chapadinha e São Luís (MA) · atendimento remoto.</p>
+    </div>
+
+    <nav class="cards" aria-label="Links">
+      <a class="card principal js-wa" href="#">
+        <span class="n">01</span>
+        <span><b>Pedir orçamento</b><small>Resposta pelo WhatsApp, sem compromisso</small></span>
+        <span class="seta">→</span>
+      </a>
+      <a class="card" href="/#projetos">
+        <span class="n">02</span>
+        <span><b>Portfólio</b><small>Projetos reais: problema, solução e resultado</small></span>
+        <span class="seta">→</span>
+      </a>
+      <a class="card js-wa" data-msg="Oi, Marcus! Vi a vaga de projeto com condição especial e quero saber mais." href="#">
+        <span class="n">03</span>
+        <span><b>Vaga aberta</b><small>1 negócio da região com condição de lançamento</small></span>
+        <span class="seta">→</span>
+      </a>
+      <a class="card" href="https://www.linkedin.com/in/marcusgoulart-tech" target="_blank" rel="noopener">
+        <span class="n">04</span>
+        <span><b>LinkedIn</b><small>Trajetória e experiência</small></span>
+        <span class="seta">→</span>
+      </a>
+    </nav>
+
+    <footer>© <span id="ano">2026</span> Marcus Goulart — Tech Studio</footer>
+  </div>
+<script>
+  const WA = "559885315120", MSG = "Oi, Marcus! Vim pelo Instagram e quero um orçamento.";
+  document.querySelectorAll(".js-wa").forEach(a => {
+    a.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(a.dataset.msg || MSG);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
